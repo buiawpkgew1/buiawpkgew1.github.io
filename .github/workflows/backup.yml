@@ -1,4 +1,4 @@
-name: backup to onedrive
+name: 备份到onedrive
 
 on:
   push:

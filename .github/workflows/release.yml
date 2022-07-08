@@ -1,4 +1,4 @@
-name: release backup
+name: 发布备份
 on: 
   push:
     branches: 
@@ -12,33 +12,33 @@ jobs:
     name: Release
     runs-on: ubuntu-18.04
     steps:
-      - name: Checkout
+      - name: 查看
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Setup Node
+      - name: 设置节点
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Install
+      - name: 安装
         run: |
          yarn
          yarn add semantic-release
          yarn add @semantic-release/changelog @semantic-release/git -D
 
-      - name: Read version
+      - name: 阅读版本
         id: version
         uses: ashley-taylor/read-json-property-action@v1.0
         with:
           path: ./package.json
           property: version
           
-      - name: Create timestamp
+      - name: 创建时间戳
         id: create_timestamp
         run: echo "::set-output name=timestamp::$(date '+%Y%m%d%H%M%s')"
         shell: bash
 
-      - name: GitHub Release
+      - name: GitHub 发布
         id: create_release
         uses: actions/create-release@latest
         env:

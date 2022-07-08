@@ -1,5 +1,5 @@
 
-name: Hexo SEO Auto Push
+name: Hexo SEO 自动推送
 
 on:
   schedule:

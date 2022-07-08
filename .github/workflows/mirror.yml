@@ -1,4 +1,4 @@
-name: 'github mirror'
+name: 'github镜像'
 
 on:
   push:
@@ -30,6 +30,6 @@ jobs:
         uses: pixta-dev/repository-mirroring-action@v1
         with:
           target_repo_url:
-            git@gitlab.com:valetzx/valetzx.gitlab.io.git
+            git@gitlab.com:buiawpkgew1/buiawpkgew1.gitlab.io.git
           ssh_private_key:
             ${{ secrets.GITLAB_KEY }}
